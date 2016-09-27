@@ -2,8 +2,8 @@
 - name: Replace ubuntu mirror
   replace:
     dest: /etc/apt/sources.list
-    regexp: 'us\.archive\.ubuntu\.com'
-    replace: 'at.archive.ubuntu.com'
+    regexp: 'at\.archive\.ubuntu\.com'
+    replace: 'pl.archive.ubuntu.com'
 
 - name: Update apt cache
   apt: update_cache=yes
