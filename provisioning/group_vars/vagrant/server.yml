@@ -1,5 +1,5 @@
 server:
-  packages: [htop, nano, git, unzip]
+  packages: [htop, nano, git, unzip, putty-tools]
   timezone: Europe/Warsaw
   locale: en_GB.UTF-8
 

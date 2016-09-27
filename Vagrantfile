@@ -86,10 +86,10 @@ Vagrant.configure("2") do |config|
         s.path = 'provisioning/shell/initial-setup.sh'
         s.args = '/vagrant/provisioning'
     end
-    config.vm.provision 'shell' do |s|
-        s.path = 'provisioning/shell/ssh-keygen.sh'
-        s.args = "#{ssh_username}"
-    end
+#     config.vm.provision 'shell' do |s|
+#         s.path = 'provisioning/shell/ssh-keygen.sh'
+#         s.args = "#{ssh_username}"
+#     end
 
     # If ansible is in your path it will provision from your HOST machine
     # If ansible is not found in the path it will be instaled in the VM and provisioned from there
@@ -115,27 +115,27 @@ Vagrant.configure("2") do |config|
 
     config.vm.provision :shell, :path => 'provisioning/shell/important-notices.sh'
 
-    customKey  = "#{dir}/provisioning/files/dot/ssh/id_rsa"
-    vagrantKey = "#{vagrant_dot}/machines/default/virtualbox/private_key"
-
-    if File.file?(customKey)
-        config.ssh.private_key_path = [
-            customKey,
-            "#{vagrant_home}/insecure_private_key"
-      ]
-
-      if File.file?(vagrantKey) and ! FileUtils.compare_file(customKey, vagrantKey)
-          File.delete(vagrantKey)
-      end
-
-      if ! File.directory?(File.dirname(vagrantKey))
-          FileUtils.mkdir_p(File.dirname(vagrantKey))
-      end
-
-      if ! File.file?(vagrantKey)
-          FileUtils.cp(customKey, vagrantKey)
-      end
-    end
+#     customKey  = "#{dir}/provisioning/files/dot/ssh/id_rsa"
+#     vagrantKey = "#{vagrant_dot}/machines/default/virtualbox/private_key"
+#
+#     if File.file?(customKey)
+#         config.ssh.private_key_path = [
+#             customKey,
+#             "#{vagrant_home}/insecure_private_key"
+#       ]
+#
+#       if File.file?(vagrantKey) and ! FileUtils.compare_file(customKey, vagrantKey)
+#           File.delete(vagrantKey)
+#       end
+#
+#       if ! File.directory?(File.dirname(vagrantKey))
+#           FileUtils.mkdir_p(File.dirname(vagrantKey))
+#       end
+#
+#       if ! File.file?(vagrantKey)
+#           FileUtils.cp(customKey, vagrantKey)
+#       end
+#     end
 
     config.ssh.username = "#{ssh_username}"
     config.ssh.insert_key = false
