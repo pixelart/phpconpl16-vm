@@ -64,6 +64,7 @@ Vagrant.configure("2") do |config|
     # https://github.com/fgrehm/vagrant-cachier
     if Vagrant.has_plugin?('vagrant-cachier')
         config.cache.scope = :box
+        config.cache.auto_detect = false
     end
 
     # https://github.com/dotless-de/vagrant-vbguest
