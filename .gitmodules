@@ -1,0 +1,3 @@
+[submodule "workshops/specifications"]
+	path = workshops/specifications
+	url = https://github.com/pixelart/phpconpl16-specifications.git
