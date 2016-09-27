@@ -1,0 +1,15 @@
+server:
+  packages: [htop, nano, git, unzip]
+  timezone: Europe/Warsaw
+  locale: en_GB.UTF-8
+
+vagrant_local:
+  vm:
+    base_box: geerlingguy/ubuntu1604
+    hostname: phpconpl16
+    ip: 10.105.100.16
+    memory: '1024'
+    cpus: '2'
+    sharedfolder: ./
+    useVagrantCloud: '1'
+    syncType: nfs

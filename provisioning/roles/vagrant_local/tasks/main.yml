@@ -1,0 +1,9 @@
+---
+- name: Copy dot files to vagrant
+  shell: cp -r /vagrant/provisioning/files/dot/.[a-zA-Z0-9]* ~vagrant/
+
+- name: Copy dot files to vagrant (permissions)
+  shell: chown -R vagrant ~vagrant/.[a-zA-Z0-9]*
+
+- name: Copy dot files to root
+  shell: cp -r /vagrant/provisioning/files/dot/.[a-zA-Z0-9]* /root/

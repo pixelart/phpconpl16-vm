@@ -1,0 +1,35 @@
+---
+- name: Replace ubuntu mirror
+  replace:
+    dest: /etc/apt/sources.list
+    regexp: 'us\.archive\.ubuntu\.com'
+    replace: 'at.archive.ubuntu.com'
+
+- name: Update apt cache
+  apt: update_cache=yes
+
+- name: Install aptitude
+  apt: name=aptitude state=latest
+
+- name: Update packages
+  apt: upgrade=yes
+
+- name: Install System Packages
+  apt: name={{ item }} state=latest
+  with_items:
+    - curl
+    - wget
+    - aptitude
+    - python-software-properties
+
+- name: Install Extra Packages
+  apt: name={{ item }} state=latest
+  with_items: '{{ server.packages }}'
+  when: server.packages is defined
+
+- name: Configure the timezone
+  shell: timedatectl set-timezone {{ server.timezone }}
+  when: server.timezone is defined
+
+- name: Set default system language pack
+  shell: locale-gen {{ server.locale }}

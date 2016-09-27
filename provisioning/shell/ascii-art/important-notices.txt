@@ -1,0 +1,37 @@
+          READ ME FOR SOME IMPORTANT INFORMATION!
+          =======================================
+
+If nothing did not blow up (you do not see a sea of red
+above), then your VM was generated successfully!
+
+* A unique private key was generated for you! It is located
+  at "provisioning/files/dot/ssh/id_rsa". If you are on Windows,
+  a PuTTY-friendly key was also generated at same location
+  with a ".ppk" extension.
+
+* If you want to use your own private key for future
+  provisions, overwrite the generated key above with your
+  own. Make sure to follow the naming pattern, and include a
+  ".pub" public key.
+
+* If you wish to add packages, modules, Apache/Nginx vhosts,
+  or anything else, open up "provisioning/group_vars/vagrant/*.yml"
+  and make changes to the roles configs! If not configurable
+  add the needed Ansible roles.
+
+* If you change something, simply run
+  "$ vagrant provision" and your VM will be updated with the
+  changes you requested!
+
+Did something go wrong? Don't worry! I can (maybe) help!
+Happy programming!
+                                            - Patrik Karisch
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  ____                _      _    _                    _  |
+| |  _ \ ___  __ _  __| |    / \  | |__   _____   _____| | |
+| | |_) / _ \/ _` |/ _` |   / _ \ | '_ \ / _ \ \ / / _ \ | |
+| |  _ <  __/ (_| | (_| |  / ___ \| |_) | (_) \ V /  __/_| |
+| |_| \_\___|\__,_|\__,_| /_/   \_\_.__/ \___/ \_/ \___(_) |
+|                                                          |
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
