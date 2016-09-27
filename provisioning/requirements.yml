@@ -1,8 +1,0 @@
-# All the required roles from Ansible Galaxy. Run with:
-# ansible-galaxy install -r provisioning/requirements.yml -p provisioning/roles/
-
-- src: geerlingguy.mysql
-- src: geerlingguy.php
-- src: geerlingguy.php-mysql
-- src: geerlingguy.php-xdebug
-- src: geerlingguy.composer
